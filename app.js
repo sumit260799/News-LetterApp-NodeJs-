@@ -34,16 +34,15 @@ app.post('/', (req, res) => {
 
   const options = {
     method: "POST",
-    auth: 'sumit:56b440574666aa74f5a9ac883bce05ef-us9',
+    auth: 'sumit:b623f7dbbdc0c25d4493f92dda021b55-us9',
 
   }
   const request = https.request(url, options, function (response) {
 
-    if(response.statusCode===200){
+    if (response.statusCode === 200) {
       res.sendFile(__dirname + "/success.html");
     }
-    else{
-      res.sendFile(__dirname + "/failure.html");
+    else {
       res.sendFile(__dirname + "/failure.html");
     }
 
@@ -59,12 +58,12 @@ app.post('/', (req, res) => {
 });
 
 // for failure page
-app.post("/failure", (req,res) => {
+app.post("/failure", (req, res) => {
   res.redirect('/');
 })
 
 
-app.listen(process.env.PORT||3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(`Example app listening on port ${port}`)
 });
 
